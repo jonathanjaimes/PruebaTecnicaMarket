@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
-const PayButton = (props) => {
-  useEffect(() => {
+const PayButtonaa = (props) => {
+  const scriptRef = useRef(null);
+
+  const handlePayment = () => {
     const script = document.createElement('script');
     script.src = 'https://checkout.wompi.co/widget.js';
     script.setAttribute('data-render', 'button');
@@ -10,10 +12,22 @@ const PayButton = (props) => {
     script.setAttribute('data-amount-in-cents', `${props.total * 100}`);
     script.setAttribute('data-reference', '4XMPGKWWPKWQ');
     script.setAttribute('data-signature:integrity', '37c8407747e595535433ef8f6a811d853cd943046624a0ec04662b17bbf33bf5');
-    document.querySelector('form').appendChild(script);
+
+    const form = document.querySelector('form');
+    form.appendChild(script);
+    scriptRef.current = script; // Guardar la referencia del script en el ref
+  };
+
+  useEffect(() => {
+    handlePayment();
 
     return () => {
-      document.querySelector('form').removeChild(script);
+      // Verificar si el script existe antes de eliminarlo
+      console.log(scriptRef.current, "SSSS")
+      if (scriptRef.current) {
+        const form = document.querySelector('form');
+        form.removeChild(scriptRef.current);
+      }
     };
   }, []);
 
@@ -24,4 +38,4 @@ const PayButton = (props) => {
   );
 };
 
-export default PayButton;
+export default PayButtonaa;

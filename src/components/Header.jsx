@@ -15,14 +15,14 @@ const Header = () => {
         <div
           className={`${principalStyles.PrincipalContainer_header_cart} 
             ${
-              cartProducts.length > 0 &&
+              cartProducts?.length > 0 &&
               principalStyles.PrincipalContainer_header_cartNoProducts
             }`}
         >
           <ShoppingCartOutlined className={principalStyles.cartIcon} /> $
           {totalPrice(cartProducts)}
         </div>
-        {cartProducts.length > 0 && (
+        {cartProducts?.length > 0 && (
           <div onClick={() => eraseAll()} className={principalStyles.eraseAll}>
             X
           </div>

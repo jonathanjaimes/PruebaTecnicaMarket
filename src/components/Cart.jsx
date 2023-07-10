@@ -13,7 +13,7 @@ const Cart = () => {
   const [isShowPayment, setIsShowPayment] = React.useState(false);
   const resolution = React.useRef(window.innerWidth);
   const filterUniqueProducts = () => {
-    const uniqueProducts = cartProducts.filter((product, index, self) => {
+    const uniqueProducts = cartProducts?.filter((product, index, self) => {
       return index === self.findIndex((t) => t.id === product.id);
     });
     setProductRender(uniqueProducts);
@@ -30,7 +30,7 @@ const Cart = () => {
           : principalStyles.CartContainer_mobile
       }
     >
-      {cartProducts.length > 0 && (
+      {cartProducts?.length > 0 && (
         <div className={principalStyles.CartContainer_contButton}>
           <button
             onClick={() => {
@@ -42,7 +42,7 @@ const Cart = () => {
         </div>
       )}
 
-      {productRender.map((products, index) => {
+      {productRender?.map((products, index) => {
         if (!isShowPayment) {
           return (
             <div
@@ -116,7 +116,7 @@ const Cart = () => {
         </p>
       )}
 
-      {cartProducts.length === 0 && (
+      {cartProducts?.length === 0 && (
         <div className={principalStyles.CartContainer_contAlert}>
           <SmileOutlined className={principalStyles.smileIconAlert} />
           <p className={principalStyles.CartContainer_alertText}>

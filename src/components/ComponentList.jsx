@@ -5,7 +5,7 @@ import { contextMarket } from "../pages/Principal";
 import images from "../components/images";
 
 export const findSelected = (cartProducts, id) => {
-  return cartProducts.filter((thisProduct) => thisProduct.id === id).length;
+  return cartProducts?.filter((thisProduct) => thisProduct.id === id)?.length;
 };
 
 const ComponentList = () => {
@@ -14,7 +14,7 @@ const ComponentList = () => {
   return (
     <div className={principalStyles.ComponentListContainer}>
       <div className={principalStyles.ComponentList_products}>
-        {products.map((product, index) => {
+        {products?.map((product, index) => {
           return (
             <div
               key={product.id}

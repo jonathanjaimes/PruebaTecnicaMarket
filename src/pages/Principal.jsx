@@ -10,7 +10,7 @@ export const contextMarket = React.createContext();
 
 export const totalPrice = (cartProducts) => {
   let total = 0;
-  cartProducts.forEach((product) => {
+  cartProducts?.forEach((product) => {
     total += product.price;
   });
   return total;
@@ -18,10 +18,14 @@ export const totalPrice = (cartProducts) => {
 
 const Principal = () => {
   const [cartProducts, setCartProducts] = React.useState([]);
+  const refCartProducts = React.useRef();
   const resolution = React.useRef(window.screen.width);
   const [isShowRightBar, setIsShowRightBar] = React.useState(false);
   const addProduct = (product) => {
+    console.log("HOLA")
     setCartProducts([...cartProducts, product]);
+    refCartProducts.current = [...cartProducts, product];
+    localStorage.setItem("products", JSON.stringify(refCartProducts.current));
   };
   const deleteProduct = (idToDelete) => {
     const indexToDelete = cartProducts.findIndex(
@@ -30,13 +34,20 @@ const Principal = () => {
     if (indexToDelete !== -1) {
       cartProducts.splice(indexToDelete, 1);
       setCartProducts([...cartProducts]);
+      refCartProducts.current = [...cartProducts];
+      localStorage.setItem("products", JSON.stringify(refCartProducts.current));
     }
   };
   const eraseAll = () => {
     setCartProducts([]);
+    refCartProducts.current = [];
+    localStorage.setItem("products", JSON.stringify(refCartProducts.current));
   };
 
-  React.useEffect(() => {}, []);
+  React.useEffect(() => {
+    let produ =  JSON.parse( localStorage.getItem( 'products' ) ) || []
+    setCartProducts([...produ])
+  }, []);
 
   return (
     <contextMarket.Provider
