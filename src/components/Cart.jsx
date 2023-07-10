@@ -44,7 +44,7 @@ const Cart = () => {
       {productRender.map((products, index) => {
         if (!isShowPayment) {
           return (
-            <div className={principalStyles.CartContainer_productContainer}>
+            <div className={principalStyles.CartContainer_productContainer} key={products.id}>
               <div className={principalStyles.CartContainer_image}>
                 <div
                   className={`${principalStyles.addFloatCircle} ${principalStyles.addFloatCircleVisible} ${principalStyles.addFloatCircleNoCursorPointer}`}
@@ -89,7 +89,7 @@ const Cart = () => {
         }
 
         return (
-          <div>
+          <div key={products.id}>
             <div className={principalStyles.CartContainer_cartDone}>
               <div className={principalStyles.CartContainer_circle}>
                 {findSelected(cartProducts, products.id)}
