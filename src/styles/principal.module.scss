@@ -274,6 +274,13 @@ $color-gray-hover: #d9d9d9;
   background-color: $primary-color-hover;
 }
 
+.payButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 0 0;
+}
+
 /* CartMobile */
 
 .CartContainer_mobile {

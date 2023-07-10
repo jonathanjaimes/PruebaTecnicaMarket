@@ -4,6 +4,7 @@ import { contextMarket, totalPrice } from "../pages/Principal";
 import { findSelected } from "../components/ComponentList";
 import { MinusOutlined, PlusOutlined, SmileOutlined } from "@ant-design/icons";
 import images from "../components/images";
+import PayButton from "./PayButton";
 
 const Cart = () => {
   const { addProduct, cartProducts, deleteProduct } =
@@ -44,7 +45,10 @@ const Cart = () => {
       {productRender.map((products, index) => {
         if (!isShowPayment) {
           return (
-            <div className={principalStyles.CartContainer_productContainer} key={products.id}>
+            <div
+              className={principalStyles.CartContainer_productContainer}
+              key={products.id}
+            >
               <div className={principalStyles.CartContainer_image}>
                 <div
                   className={`${principalStyles.addFloatCircle} ${principalStyles.addFloatCircleVisible} ${principalStyles.addFloatCircleNoCursorPointer}`}
@@ -118,6 +122,11 @@ const Cart = () => {
           <p className={principalStyles.CartContainer_alertText}>
             Please choose a product on the left
           </p>
+        </div>
+      )}
+      {totalPrice(cartProducts) > 0 && isShowPayment && (
+        <div className={principalStyles.payButton}>
+          <PayButton total={totalPrice(cartProducts)} />
         </div>
       )}
     </div>
