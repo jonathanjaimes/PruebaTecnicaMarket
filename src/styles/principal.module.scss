@@ -1,0 +1,357 @@
+$primary-color: #d024ff;
+$primary-color-hover: #b21dd4;
+$color-gray: #e6e6e6;
+$color-gray-dark: #d8d8d8;
+$color-gray-hover: #d9d9d9;
+
+/* Principal */
+
+.PrincipalContainer {
+  height: 100vh;
+  position: relative;
+}
+
+.maskMobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.322);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.maskMobileContent {
+  background-color: #fff;
+  height: 100%;
+  width: 90%;
+}
+
+.cartMobileContainer {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: calc(100vh - 60px);
+}
+
+.closeContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.closeIcon {
+  margin: 20px 20px 20px 0;
+  font-size: 20px;
+}
+
+.PrincipalContainer_body {
+  display: flex;
+  height: calc(100vh - 110px);
+}
+
+.PrincipalContainer_header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 0;
+}
+
+.PrincipalContainer_header_logo {
+  height: 70px;
+  width: 60px;
+  margin: 0 0 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.PrincipalContainer_header_cart {
+  min-width: 100px;
+  padding: 8px;
+  background-color: $primary-color;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  user-select: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.PrincipalContainer_header_cartNoProducts {
+  background-color: #fbebff;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+}
+
+.cartIcon {
+  font-size: 20px;
+}
+
+.CartContainer_cartDone {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 10px;
+  border-bottom: 1px solid $color-gray;
+  padding: 0 0 10px 0;
+}
+
+.CartContainer_productSmallImage {
+  width: 60px;
+  height: 90px;
+  background-color: $color-gray;
+  margin: 0 0 0 20px;
+}
+
+.CartContainer_circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: red;
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.CartContainer_contButton {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.CartContainer_contButton > button {
+  padding: 8px;
+  border: 0;
+  border-radius: 5px;
+  background-color: #6cd91a;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+}
+
+.CartContainer_alertText {
+  text-align: center;
+  margin: 20px 0 0 0;
+  color: $color-gray;
+  font-weight: bold;
+}
+
+.CartContainer_contAlert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 0;
+}
+
+.smileIconAlert {
+  font-size: 50px;
+  color: $color-gray;
+}
+
+.PrincipalContainer_header_contCart {
+  display: flex;
+}
+
+.eraseAll {
+  background-color: $primary-color;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.titlesContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 0 20px;
+  height: 30px;
+}
+
+.leftTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: $primary-color;
+  flex: 1;
+}
+
+.rightTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: $primary-color;
+  width: 400px;
+  margin: 0 0 0 10px;
+}
+
+.menuIcon {
+  font-size: 24px;
+  margin: 0 10px 15px 0;
+}
+
+/* Cart */
+
+.CartContainer {
+  width: 400px;
+  overflow-y: scroll;
+  margin: 0 0 0 10px;
+  border-top: 1px solid #f4c7ff;
+}
+
+.CartContainer_productContainer {
+  margin: 20px 5px;
+}
+
+.CartContainer_image {
+  height: 200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.CartContainer_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px 5px 0;
+}
+
+.CartContainer_info > span {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.CartContainer_info > span > span {
+  color: $primary-color;
+}
+
+.CartContainer_description {
+  border-top: 1px solid #f4c7ff;
+  border-bottom: 1px solid #f4c7ff;
+  padding: 5px 0;
+}
+
+.containerCountSigns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signBox {
+  width: 30px;
+  height: 30px;
+  background-color: $color-gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  color: #000;
+}
+
+.signBox:hover {
+  background-color: $color-gray-hover;
+}
+
+.signBoxPrimary {
+  background-color: $primary-color;
+  margin: 0 0 0 5px;
+  color: #fff;
+}
+
+.signBoxPrimary:hover {
+  background-color: $primary-color-hover;
+}
+
+/* CartMobile */
+
+.CartContainer_mobile {
+  width: 100%;
+  overflow-y: scroll;
+  margin: 0 0 0 10px;
+  border-top: 1px solid #f4c7ff;
+}
+
+/* ComponentList */
+
+.ComponentListContainer {
+  flex: 1;
+  overflow-y: scroll;
+  //   background-color: pink;
+  border-top: 1px solid #f4c7ff;
+}
+
+.ComponentList_products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ComponentList_cardProduct {
+  width: 150px;
+  height: 200px;
+  border: 1px solid $color-gray;
+  margin: 5px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boderCardSelected {
+  border: 1px solid $primary-color;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.addFloatCircle {
+  cursor: pointer;
+  user-select: none;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  border-radius: 50%;
+  background-color: red;
+  color: #fff;
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  visibility: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+.addFloatCircleNoCursorPointer {
+  cursor: auto;
+}
+
+.ComponentList_cardProduct:hover .addFloatCircle {
+  visibility: visible;
+}
+
+.addFloatCircleVisible {
+  visibility: visible;
+}
+
+.totalText {
+  text-align: right;
+  font-size: 24px;
+  font-weight: bold;
+  color: $color-gray-dark;
+  margin: 0 10px 20px 0;
+}
+
+.totalText > span {
+  color: $primary-color;
+}

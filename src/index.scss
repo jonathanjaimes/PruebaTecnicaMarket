@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+$primary-color: #d024ff;
+$primary-color-light: #eeb3ff;
+$primary-color-hover: #b21dd4;
+$color-gray: #e6e6e6;
+$color-gray-dark: #d8d8d8;
+$color-gray-hover: #d9d9d9;
+
+
+body, html {
+  font-family: 'Roboto', sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 7px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #f1f1f1;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: $primary-color-light;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: $primary-color;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: $primary-color;
+}
